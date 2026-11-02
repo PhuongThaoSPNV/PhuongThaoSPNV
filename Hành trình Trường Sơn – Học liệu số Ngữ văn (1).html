@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="vi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hành trình Trường Sơn – Học liệu số Ngữ văn</title>
+<link id="fn" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+<style id="ms">
+:root{--bg:#e9eddc;--ink:#1c2b1f;--acc:#b3261e;--dong:#b8650f;--tay:#1a7570;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17241b;--ink:#e6ecd6;--acc:#ffd21f;--dong:#f0a24a;--tay:#5fd0c8}}
+:root[data-theme="dark"]{--bg:#17241b;--ink:#e6ecd6;--acc:#ffd21f;--dong:#f0a24a;--tay:#5fd0c8}
+html,body{height:100%;margin:0;overflow:hidden;background:#9cc0a8;font-family:'Be Vietnam Pro',system-ui,sans-serif}
+[hidden]{display:none!important}
+canvas{position:fixed;inset:0;width:100%;height:100%;display:block}
+.hud{position:fixed;top:calc(8px + env(safe-area-inset-top,0px));background:#0b1a10b3;color:#fff;border-radius:10px;padding:8px 12px;font-size:14px}
+#hud{left:8px}#list{right:8px;max-width:64vw;font-size:13px}
+#list summary{cursor:pointer;font-weight:600}
+#list button{display:block;width:100%;text-align:left;margin-top:6px;border:0;border-left:4px solid;background:#ffffff22;color:#fff;padding:6px 8px;border-radius:4px;font:inherit;cursor:pointer}
+#list .D{border-color:#f0a24a}#list .T{border-color:#5fd0c8}
+#act{position:fixed;left:50%;bottom:calc(28px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);padding:12px 22px;border:0;border-radius:99px;background:#ffd21f;color:#1c2b1f;font:700 15px 'Be Vietnam Pro',system-ui,sans-serif;cursor:pointer;box-shadow:0 4px 18px #0006}
+#pad{position:fixed;left:12px;bottom:calc(16px + env(safe-area-inset-bottom,0px));display:none;grid-template-columns:repeat(3,52px);gap:6px}
+#pad button{height:52px;border:0;border-radius:12px;background:#0b1a10b3;color:#fff;font-size:20px;touch-action:none}
+@media(pointer:coarse){#pad{display:grid}}
+.card{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);width:min(580px,92vw);max-height:80vh;overflow:auto;background:var(--bg);color:var(--ink);border-radius:14px;padding:20px 24px;box-shadow:0 12px 44px #0008;line-height:1.6;font-size:15px;box-sizing:border-box}
+.card h2{margin:.3em 0 .1em;font-size:22px;line-height:1.25}
+.card h3{margin:1.1em 0 .2em;font-size:15px;color:var(--acc)}
+.card p{margin:.2em 0;white-space:pre-line}
+.card button.b,.x{border:0;background:var(--acc);color:var(--bg);border-radius:8px;padding:8px 16px;font:600 14px 'Be Vietnam Pro',system-ui,sans-serif;cursor:pointer}
+.x{float:right;padding:4px 10px}
+.tag{font-size:13px;font-weight:700}
+.q{margin-top:16px;padding:10px 14px;border-left:4px solid var(--acc);background:#88888822}
+.card button.b{margin:6px 6px 0 0}
+.f label{display:block;font-size:13px;font-weight:600;margin-top:10px}
+.f textarea,.f select,#ej{width:100%;box-sizing:border-box;font:inherit;padding:6px 8px;border:1px solid #8886;border-radius:6px;background:var(--bg);color:inherit}
+#ej{margin-top:8px}
+#hud button{margin-left:6px;border:0;border-radius:6px;padding:4px 10px;background:#ffd21f;color:#1c2b1f;font:600 12px 'Be Vietnam Pro',system-ui,sans-serif;cursor:pointer}
+#panel{width:min(760px,94vw);max-height:88vh;padding:0 24px 24px}
+#panel>h2{margin-top:44px}#panel>.x{margin-top:14px}
+.nv{position:sticky;top:0;z-index:2;display:flex;flex-wrap:wrap;gap:2px;align-items:center;margin:0 -24px;padding:8px 24px;background:var(--bg);border-bottom:1px solid #8884}
+.nv b{margin-right:auto;font-size:14px}
+.nv button{border:0;background:none;color:var(--ink);font:inherit;font-size:13px;cursor:pointer;padding:6px 8px}
+.nv .x{float:none;background:var(--acc);color:var(--bg);margin-left:6px;padding:4px 10px}
+.hero{margin:0 -24px;padding:34px 24px 26px;color:#fff;background:linear-gradient(135deg,var(--c1),var(--c2))}
+.hero h1{margin:6px 0;font-size:30px;line-height:1.2}.hero p{margin:4px 0}
+.hero blockquote{margin:14px 0;padding-left:12px;border-left:3px solid #fff9;font-style:italic}
+.hero button{border:0;border-radius:99px;padding:9px 20px;background:#fff;color:#1c2b1f;font:600 14px 'Be Vietnam Pro',system-ui,sans-serif;cursor:pointer}
+#panel section{padding:24px 0 4px;scroll-margin-top:52px}
+.kk{font-size:13px;font-weight:700;color:var(--acc)}
+.tl{border-left:3px solid var(--acc);margin:14px 0 0 6px;padding-left:20px}
+.tl div{position:relative;margin-bottom:18px}
+.tl div:before{content:'';position:absolute;left:-27px;top:9px;width:11px;height:11px;border-radius:50%;background:var(--acc)}
+.tl b{display:block;font-size:22px;color:var(--acc)}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.tabs button{border:1px solid var(--acc);background:none;color:var(--ink);border-radius:99px;padding:6px 14px;font:inherit;font-size:14px;cursor:pointer}
+.tabs button.on{background:var(--acc);color:var(--bg)}
+.card a{color:var(--acc);font-weight:600}
+.hud{background:#7a1410e6;border:1px solid #ffd21f99}
+#hud:before{content:'★ ';color:#ffd21f}
+#panel{border:3px solid #ffd21f;box-shadow:0 0 0 3px #8f1d14,0 14px 48px #000a}
+.nv{background:#7a1410;border-bottom:3px solid #ffd21f}
+.nv b{color:#ffd21f}.nv button{color:#fff}
+.nv .x{background:#ffd21f;color:#3a0b08}
+.hero{position:relative;overflow:hidden;padding-bottom:70px;border-bottom:4px solid #ffd21f}
+.hero:before{content:'★';position:absolute;right:16px;top:4px;font-size:130px;line-height:1;color:#ffd21f;opacity:.28}
+.hero:after{content:'';position:absolute;left:0;right:0;bottom:0;height:56px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 60' preserveAspectRatio='none'%3E%3Cpath d='M0 60V34l36-20 34 22 44-30 48 32 40-18 54 28 44-26 48 20 52-16V60z' fill='%23000' fill-opacity='.32'/%3E%3C/svg%3E") 0 0/100% 100%}
+.hero>*{position:relative;z-index:1}
+.hero h1{color:#fff3c4;text-shadow:0 2px 6px #0006}
+#panel section h2:after{content:' ★';color:var(--acc);font-size:.7em}
+.tl div:before{border-radius:0;clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);width:15px;height:15px;left:-29px;top:6px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;margin-top:12px}
+.gal img{width:100%;border:3px solid #ffd21f;border-radius:6px;display:block;cursor:zoom-in}
+.gal img.big{grid-column:1/-1}
+.th{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}.th span{display:flex;flex-direction:column;gap:4px;width:96px}
+.th img{width:96px;height:72px;object-fit:cover;border-radius:4px}
+.th .b{margin:0;padding:3px 6px;font-size:12px}
+.f .row{display:flex;gap:10px}.f input[type=color]{width:60px;height:34px;padding:0;border:0;background:none}
+.f input[type=file]{margin-top:6px;font-size:13px;max-width:100%}
+.f h3{margin-top:22px}
+.rs{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;margin-top:12px}
+.card a.rc{display:flex;flex-direction:column;gap:4px;padding:12px 14px;border:2px solid var(--acc);border-radius:10px;text-decoration:none;color:var(--ink);font-weight:400;background:#88888814}
+.card a.rc:hover{background:#88888833}
+.rc i{font-style:normal;font-size:12px;font-weight:700;color:var(--bg);background:var(--acc);align-self:flex-start;padding:2px 10px;border-radius:99px}
+.rc b{font-size:15px}.rc span{font-size:13px;opacity:.85}.rc small{font-size:12px;opacity:.65}
+.hint{font-size:12px;opacity:.8;margin:4px 0}
+</style></head><body>
+<div id="hud" class="hud"><b>Hành trình Trường Sơn</b> &nbsp; <span id="prog">0/6 trạm</span><button id="ed">Chỉnh sửa nội dung</button></div>
+<details id="list" class="hud"><summary>Bản đồ trạm</summary></details>
+<button id="act" hidden></button>
+<div id="pad"><button data-k="w" style="grid-area:1/2">▲</button><button data-k="a" style="grid-area:2/1">◀</button><button data-k="s" style="grid-area:2/2">▼</button><button data-k="d" style="grid-area:2/3">▶</button></div>
+<div id="intro" class="card">
+<h2 id="it">Ngã ba Trường Sơn</h2>
+<p id="ix">Bạn là người chiến sĩ đứng ở ngã ba đường. Rẽ phải là Trường Sơn Đông, con đường của thơ. Rẽ trái là Trường Sơn Tây, con đường của truyện ngắn. Mỗi cột sáng là một trạm tác phẩm kháng chiến.</p>
+<p>Di chuyển bằng phím W A S D hoặc phím mũi tên (trên điện thoại dùng nút trên màn hình). Đến gần cột sáng, nhấn E hoặc nút Khám phá. Mục Bản đồ trạm giúp bạn tự động đi tới trạm.</p>
+<p style="margin-top:14px"><button id="go" class="b">Lên đường</button></p>
+</div>
+<div id="panel" class="card" hidden></div>
+<script id="t3" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script id="mj">
+const T=THREE,$=id=>document.getElementById(id),P=$('panel'),I=$('intro');
+let S=[
+{s:'D',n:'Bài thơ về tiểu đội xe không kính',sn:'Tiểu đội xe không kính',a:'Phạm Tiến Duật',y:'1969',
+c:'Phạm Tiến Duật là nhà thơ–chiến sĩ gắn bó với tuyến vận tải Trường Sơn. Bài thơ ra đời năm 1969, đoạt giải Nhất cuộc thi thơ của báo Văn nghệ (1969–1970), sau in trong tập “Vầng trăng quầng lửa”.',
+t:'Những chiếc xe vận tải bị bom giật vỡ kính vẫn băng qua tuyến đường Trường Sơn ra tiền tuyến. Người lái xe đối diện bụi, mưa, gió bằng thái độ ung dung, đùa vui; từ gian khổ nảy sinh tình đồng đội ấm như một gia đình và ý chí giải phóng miền Nam.',
+g:'Hình ảnh độc đáo, rất thực của chiến trường; ngôn ngữ và giọng điệu như lời trò chuyện, giàu chất văn xuôi; nhịp điệu tự nhiên, đối lập giữa cái thiếu thốn của chiếc xe và cái đủ đầy của lòng người.',
+v:'Khắc họa vẻ đẹp người lính lái xe: dũng cảm, lạc quan, yêu đời, gắn bó đồng đội và một trái tim luôn hướng về miền Nam.',
+q:'Vì sao tác giả chọn giọng điệu vui đùa để nói về một hiện thực khốc liệt? Hình ảnh chiếc xe không kính làm nổi bật phẩm chất nào của người lính?',m:'Gian khổ của chiếc xe không kính không thắng nổi trái tim người lính.',l:'1969|Phạm Tiến Duật sáng tác bài thơ khi đang là chiến sĩ trên tuyến vận tải Trường Sơn.\n1969–1970|Bài thơ đoạt giải Nhất cuộc thi thơ của báo Văn nghệ.\n1970|In trong tập thơ Vầng trăng quầng lửa.'},
+{s:'D',n:'Khúc hát ru những em bé lớn trên lưng mẹ',sn:'Khúc hát ru',a:'Nguyễn Khoa Điềm',y:'1971',
+c:'Viết năm 1971 khi tác giả hoạt động ở chiến khu Trị – Thiên, in trong tập “Đất và khát vọng” (1974). Cảm hứng từ hình ảnh người mẹ Tà-ôi vừa giã gạo nuôi bộ đội vừa địu con trên lưng.',
+t:'Người mẹ miền núi vất vả giã gạo, địu con, vừa làm vừa hát ru. Lời ru gói trọn tình thương con, niềm tự hào về con và khát vọng con lớn lên làm người tự do, góp phần cho ngày đất nước thống nhất. Tình thương con hòa vào tình yêu bộ đội, yêu làng, yêu nước.',
+g:'Thể thơ tự do, kết cấu theo lời ru; điệp khúc lặp lại như nhịp võng, nhịp chày; hình ảnh đậm màu sắc miền núi; giọng thơ thiết tha, trìu mến.',
+v:'Ca ngợi người mẹ miền núi giàu đức hi sinh; nối tình mẫu tử với tình yêu nước và lí tưởng chiến đấu của cả một thế hệ.',
+q:'Tình yêu con của người mẹ được mở rộng dần qua những mối quan hệ nào? Điều đó nói gì về mối quan hệ giữa tình riêng và nghĩa chung?',m:'Tình thương con là điểm xuất phát để người mẹ đi tới tình yêu đất nước.',l:'1971|Nguyễn Khoa Điềm viết bài thơ ở chiến khu Trị – Thiên.\n1974|In trong tập thơ Đất và khát vọng.'},
+{s:'D',n:'Đất nước (trích “Mặt đường khát vọng”)',sn:'Đất nước',a:'Nguyễn Khoa Điềm',y:'1971',
+c:'Trường ca hoàn thành năm 1971 tại chiến khu Trị – Thiên, in năm 1974, nhằm thức tỉnh thanh niên đô thị miền Nam về trách nhiệm với đất nước. Đoạn “Đất Nước” thuộc chương V.',
+t:'Đoạn trích cảm nhận Đất Nước từ những điều gần gũi: phong tục, truyền thuyết, không gian, thời gian; rồi khẳng định Đất Nước là của Nhân dân, những con người vô danh đã làm nên lịch sử, văn hóa và gìn giữ non sông.',
+g:'Vận dụng sáng tạo chất liệu văn hóa dân gian (ca dao, truyền thuyết, phong tục); giọng thơ trữ tình – chính luận; thể thơ tự do, suy tư sâu lắng.',
+v:'Tư tưởng “Đất Nước của Nhân dân”, khơi dậy ý thức trách nhiệm của mỗi người trẻ với quê hương.',
+q:'Vì sao tác giả nhìn Đất Nước từ nhiều phương diện (địa lí, lịch sử, văn hóa) rồi mới đi đến tư tưởng “của Nhân dân”? Hôm nay, em hiểu điều đó thế nào?',m:'Đất Nước là của Nhân dân: những con người bình dị làm nên lịch sử.',l:'1971|Hoàn thành trường ca Mặt đường khát vọng ở chiến khu Trị – Thiên.\n1974|Trường ca được xuất bản; chương V mang tên Đất Nước.'},
+{s:'T',n:'Những ngôi sao xa xôi',sn:'Những ngôi sao xa xôi',a:'Lê Minh Khuê',y:'1971',
+c:'Viết năm 1971, giữa những năm kháng chiến chống Mỹ ác liệt nhất. Tác giả từng là thanh niên xung phong trên tuyến đường Trường Sơn nên chất liệu rất sống động.',
+t:'Ba cô gái trong tổ trinh sát mặt đường (Phương Định, Nho và chị Thao) sống trong hang dưới chân cao điểm Trường Sơn. Họ đo khối lượng đất đá, đánh dấu và phá bom nổ chậm; giữa hiểm nguy vẫn mơ mộng, hồn nhiên, yêu thương nhau.',
+g:'Truyện kể ngôi thứ nhất qua nhân vật Phương Định, miêu tả tâm lí tinh tế; ngôn ngữ trẻ trung, giản dị; xen kẽ không khí khốc liệt với những khoảnh khắc đời thường đầy chất thơ.',
+v:'Ca ngợi vẻ đẹp tâm hồn, tinh thần dũng cảm và lạc quan của thế hệ thanh niên xung phong trong chiến tranh.',
+q:'Những chi tiết đời thường nào khiến ba cô gái hiện lên như những ngôi sao? Nhan đề gợi cho em liên tưởng gì?',m:'Giữa bom đạn, vẻ đẹp của tuổi trẻ vẫn sáng như những ngôi sao.',l:'1971|Lê Minh Khuê viết truyện ngắn khi cuộc kháng chiến chống Mỹ đang ác liệt.\n1971–1972|Truyện đoạt giải Nhất cuộc thi truyện ngắn của báo Văn nghệ.'},
+{s:'T',n:'Mảnh trăng cuối rừng',sn:'Mảnh trăng cuối rừng',a:'Nguyễn Minh Châu',y:'1970',
+c:'Truyện ngắn lấy bối cảnh tuyến đường Trường Sơn trong kháng chiến chống Mỹ. Nguyễn Minh Châu là cây bút tiêu biểu của văn xuôi chống Mỹ và sau này là người đi đầu đổi mới văn học.',
+t:'Câu chuyện tình yêu của Lãm và Nguyệt giữa núi rừng Trường Sơn: mối tình nảy nở trong khói lửa, sáng như vầng trăng cuối rừng, cho thấy chiến tranh không dập tắt khát vọng yêu thương của con người.',
+g:'Không gian rừng Trường Sơn giàu chất thơ; ánh trăng là biểu tượng của vẻ đẹp tâm hồn và tình yêu; giọng văn trữ tình, đậm chất tâm lí.',
+v:'Cho thấy chiều sâu đời sống tình cảm của người chiến sĩ; chiến tranh có thể thử thách nhưng không làm phai mờ nhân tính.',
+q:'Hình ảnh mảnh trăng có thể là biểu tượng của điều gì? Vì sao nhà văn đặt một câu chuyện tình yêu giữa khung cảnh chiến tranh?',m:'Chiến tranh không dập tắt được khát vọng yêu thương và cái đẹp trong con người.',l:'1960|Nguyễn Minh Châu in truyện ngắn đầu tay Một buổi tập.\n1970|Truyện in lần đầu với tên Mảnh trăng, trong tập Những vùng trời khác nhau.\nVề sau|Khi in trong tuyển tập truyện ngắn 1945–1975, truyện đổi tên thành Mảnh trăng cuối rừng.'},
+{s:'T',n:'Rừng xà nu',sn:'Rừng xà nu',a:'Nguyễn Trung Thành (Nguyên Ngọc)',y:'1965',
+c:'Viết năm 1965 ở chiến trường Tây Nguyên, đăng trên tạp chí Văn nghệ Quân giải phóng, khi miền Nam bước vào giai đoạn đấu tranh vũ trang chống Mỹ.',
+t:'Qua lời cụ Mết, câu chuyện về Tnú, người con của làng Xô Man: mất vợ con, bị giặc đốt mười đầu ngón tay bằng nhựa xà nu, rồi đứng lên theo cách mạng. Cả làng cầm vũ khí đứng lên, như rừng xà nu vươn trời giữa bom đạn.',
+g:'Cảm hứng sử thi, không khí núi rừng Tây Nguyên đậm đặc; rừng xà nu là biểu tượng cho con người Xô Man; giọng kể gợi lối kể khan của Tây Nguyên.',
+v:'Chân lí: phải dùng bạo lực cách mạng chống lại bạo lực phản cách mạng; ca ngợi sức sống bất diệt của con người Tây Nguyên.',
+q:'Cây xà nu và con người Xô Man giống nhau ở điểm nào? Vì sao tác giả mở đầu và kết thúc truyện bằng hình ảnh rừng xà nu?',m:'Muốn sống còn, cả làng phải đứng lên như rừng xà nu vươn lên giữa bom đạn.',l:'1965|Nguyễn Trung Thành viết truyện ở chiến trường Tây Nguyên.\n1965|Truyện đăng trên tạp chí Văn nghệ Quân giải phóng.\nVề sau|Trở thành truyện ngắn tiêu biểu của văn xuôi chống Mỹ, được học trong chương trình Ngữ văn phổ thông.'}
+];
+const D=[.7,-.7],W=[-.7,-.7];
+const DEF=S.slice();try{const j=JSON.parse(localStorage.getItem('ts-data')||'null');if(Array.isArray(j)&&j.length&&j.every(x=>x&&(x.s=='D'||x.s=='T')))S=j;S.forEach(x=>{const d0=DEF.find(z=>z.n==x.n)||{};for(const k of['c','t','g','v','q','m','l'])if(typeof x[k]!='string')x[k]=d0[k]||''})}catch(e){}
+const esc=x=>String(x==null?'':x).replace(/&/g,'&amp;').replace(/</g,'&lt;'),strip=({s,n,sn,a,y,c,t,g,v,q,m,l,c1,c2,bg,im,et,ec,rs})=>({s,n,sn,a,y,c,t,g,v,q,m,l,c1,c2,bg,im,et,ec,rs}),sv=()=>{try{localStorage.setItem('ts-data',JSON.stringify(S.map(strip)));ok1=1}catch(e){ok1=0}};let ei=0,cur,dl=0,ok1=1;
+const ok=u=>/^data:image\/[a-z+]+;base64,[A-Za-z0-9+\/=]+$/.test(u||''),hx=(v,f)=>/^#[0-9a-f]{6}$/i.test(v)?v:f;
+S.forEach(x=>{x.im=(Array.isArray(x.im)?x.im:[]).filter(ok);for(const k of['bg','et','ec','c1','c2','rs'])if(typeof x[k]!='string')x[k]='';if(!ok(x.bg))x.bg=''});
+try{if(!localStorage.getItem('ts-m1')){S.forEach(x=>x.rs=(x.rs||'').split('\n').filter(z=>!z.includes('adamfakee.github.io/nguyen-minh-chau')).join('\n'));localStorage.setItem('ts-m1','1');if(localStorage.getItem('ts-data'))sv()}}catch(e){}
+let CFG={"sky":"Bình minh","it":"Ngã ba Trường Sơn","ix":"Bạn là người chiến sĩ đứng ở ngã ba đường. Rẽ phải là Trường Sơn Đông, con đường của thơ. Rẽ trái là Trường Sơn Tây, con đường của truyện ngắn. Mỗi cột sáng là một trạm tác phẩm kháng chiến."};try{Object.assign(CFG,JSON.parse(localStorage.getItem('ts-cfg')||'{}'))}catch(e){}
+$('it').textContent=CFG.it;$('ix').textContent=CFG.ix;
+const sc=new T.Scene();sc.background=new T.Color(0x9cc0a8);sc.fog=new T.Fog(0x9cc0a8,25,150);
+const cam=new T.PerspectiveCamera(55,1,.1,300),ren=new T.WebGLRenderer({antialias:true});
+ren.setPixelRatio(Math.min(devicePixelRatio,2));document.body.prepend(ren.domElement);
+const hemi=new T.HemisphereLight(0xffffff,0x44553a,.95);sc.add(hemi);const sun=new T.DirectionalLight(0xfff0c8,.8);sun.position.set(30,50,20);sc.add(sun);
+const mesh=(g,c,x,y,z,p)=>{const m=new T.Mesh(g,new T.MeshLambertMaterial({color:c}));m.position.set(x,y,z);(p||sc).add(m);return m};
+mesh(new T.PlaneGeometry(400,400).rotateX(-Math.PI/2),0x4f7a4a,0,0,0);
+[D,W].forEach(d=>{mesh(new T.BoxGeometry(3.4,.06,90),0xb08a5a,d[0]*45,.03,d[1]*45).rotation.y=Math.atan2(d[0],d[1])});
+mesh(new T.BoxGeometry(3.4,.06,18),0xb08a5a,0,.03,8);
+[[-150,0x8fb0a2,55,36],[-125,0x6a9280,45,32],[-100,0x4d7560,32,28]].forEach(([z,c,hb,r],j)=>{for(let i=0;i<9;i++){const h=hb+Math.random()*20;mesh(new T.ConeGeometry(r,h,6),c,-140+i*34+j*10,h/2,z)}});
+const tg=new T.CylinderGeometry(.25,.35,3),cg=new T.ConeGeometry(2,4.5,7);
+for(let i=0;i<260;i++){const x=(Math.random()-.5)*170,z=20-Math.random()*150;
+if(Math.abs(x)<8&&z>-3||Math.hypot(x,z+6)<7)continue;
+if([D,W].some(d=>x*d[0]+z*d[1]>-8&&Math.abs(x*d[1]-z*d[0])<5))continue;
+const k=.8+Math.random()*1.2,g=new T.Group();g.position.set(x,0,z);g.scale.setScalar(k);sc.add(g);
+mesh(tg,0x5b4630,0,1.5,0,g);mesh(cg,[0x2f6b3a,0x3b7d45,0x28583a][i%3],0,4.8,0,g)}
+function tag(txt,c,w){const k=document.createElement('canvas');k.width=512;k.height=128;const x=k.getContext('2d');x.fillStyle=c;x.fillRect(0,0,512,128);x.strokeStyle='#ffd21f';x.lineWidth=6;x.strokeRect(3,3,506,122);x.fillStyle='#fff';x.font='bold 38px sans-serif';x.textAlign='center';x.textBaseline='middle';x.fillText(txt,256,64);const sp=new T.Sprite(new T.SpriteMaterial({map:new T.CanvasTexture(k)}));sp.scale.set(w,w/4,1);return sp}
+function lab(s){if(s.lb)s.gp.remove(s.lb);s.lb=tag(s.sn||'',s.s=='D'?'#9b1c14':'#1f5f3a',6.4);s.lb.position.y=5.4;s.gp.add(s.lb)}
+function build(s){const g=new T.Group(),c=s.s=='D'?0xe8a33d:0x3fb5b0,d=s.s=='D'?D:W,r=(()=>{const rr=S.filter(x=>x!==s&&x.s==s.s&&x.r).map(x=>x.r);return s.r=rr.length?Math.max(...rr)+22:24})();s.p=new T.Vector3(d[0]*r,0,d[1]*r);s.gp=g;g.position.copy(s.p);sc.add(g);
+mesh(new T.BoxGeometry(.25,3.2,.25),0x5b4630,0,1.6,0,g);mesh(new T.BoxGeometry(2.6,1.1,.2),c,0,3.4,0,g);
+s.beam=mesh(new T.CylinderGeometry(.8,.8,16,16,1,true),c,0,8,0,g);
+s.beam.material=new T.MeshBasicMaterial({color:c,transparent:true,opacity:.28,side:T.DoubleSide});
+mesh(new T.TorusGeometry(2.5,.15,8,24).rotateX(Math.PI/2),c,0,.2,0,g);
+s.star=new T.Mesh(star(.55),new T.MeshBasicMaterial({color:0xffd21f,side:T.DoubleSide}));s.star.position.y=4.5;g.add(s.star);lab(s)}
+S.forEach(build);
+function star(r){const sh=new T.Shape();for(let i=0;i<10;i++){const a=Math.PI/2+i*Math.PI/5,q=i%2?r*.4:r;sh[i?'lineTo':'moveTo'](Math.cos(a)*q,Math.sin(a)*q)}return new T.ShapeGeometry(sh)}
+const sk=document.createElement('canvas');sk.width=4;sk.height=256;{const x=sk.getContext('2d'),g=x.createLinearGradient(0,0,0,256);g.addColorStop(0,'#2c6b5c');g.addColorStop(.55,'#a9cf9a');g.addColorStop(1,'#f6dc8c');x.fillStyle=g;x.fillRect(0,0,4,256)}
+const bt=new T.CanvasTexture(sk);bt.minFilter=T.LinearFilter;bt.generateMipmaps=false;sc.background=bt;const sunMs=[],SKY={'Bình minh':[['#2c6b5c','#a9cf9a','#f6dc8c'],0xcfdca0,0xffe9a0,0xffd36b,.95],'Hoàng hôn':[['#3b2a5c','#d9774a','#f7c46a'],0xe3b48a,0xffb347,0xff8c42,.8],'Đêm trăng':[['#0a1a2e','#1d3b4f','#4d7a7a'],0x2c4a52,0xe8f0ff,0x9fb8d8,.45],'Sương mù':[['#6c8b86','#a9bdb5','#d3ddd6'],0xbccbc3,0xffffff,0xeeeeee,.9]};
+function sky(n){const p=SKY[n]||SKY['Bình minh'],x=sk.getContext('2d'),g=x.createLinearGradient(0,0,0,256);[0,.55,1].forEach((o,i)=>g.addColorStop(o,p[0][i]));x.fillStyle=g;x.fillRect(0,0,4,256);bt.needsUpdate=true;sc.fog.color.set(p[1]);sunMs[0].material.color.set(p[2]);sunMs[1].material.color.set(p[3]);hemi.intensity=p[4]}
+[[14,0xffe9a0,1],[30,0xffd36b,.25]].forEach(([r,c,o],i)=>{const m=new T.Mesh(new T.CircleGeometry(r,32),new T.MeshBasicMaterial({color:c,transparent:true,opacity:o,fog:false}));m.position.set(35,44,-150+i*.1);sc.add(m);sunMs.push(m)});sky(CFG.sky);
+const pole=new T.Group(),fb=new T.Group();pole.position.set(0,0,-4);sc.add(pole);mesh(new T.CylinderGeometry(.12,.15,11),0x6b4a2a,0,5.5,0,pole);fb.position.y=9;pole.add(fb);
+{const m=new T.Mesh(new T.PlaneGeometry(6,4),new T.MeshBasicMaterial({color:0xda251d,side:T.DoubleSide}));m.position.x=3.1;fb.add(m)}
+[.03,-.03].forEach(z=>{const m=new T.Mesh(star(1.2),new T.MeshBasicMaterial({color:0xffe600,side:T.DoubleSide}));m.position.set(3.1,0,z);fb.add(m)});
+const fp=[];for(let i=0;i<150;i++)fp.push((Math.random()-.5)*120,1+Math.random()*9,20-Math.random()*110);
+const ff=new T.Points(new T.BufferGeometry().setAttribute('position',new T.Float32BufferAttribute(fp,3)),new T.PointsMaterial({color:0xfff2a0,size:.45,transparent:true,opacity:.85}));sc.add(ff);
+[[14,6],[-15,9]].forEach(([x,z],i)=>{const h=new T.Group();h.position.set(x,0,z);h.rotation.y=i?.5:-.5;sc.add(h);mesh(new T.BoxGeometry(4,2,3.4),0x7a5a36,0,1.5,0,h);mesh(new T.ConeGeometry(3.6,2.4,4),0xc8a24a,0,3.7,0,h).rotation.y=Math.PI/4;mesh(new T.BoxGeometry(.8,1.4,.1),0x3a2a18,0,1.1,1.7,h)});
+for(let i=0;i<40;i++){const x=(Math.random()-.5)*150,z=15-Math.random()*100;if(Math.abs(x)<6&&z>-5)continue;if([D,W].some(d=>x*d[0]+z*d[1]>-8&&Math.abs(x*d[1]-z*d[0])<5))continue;for(let j=0;j<4;j++)mesh(new T.CylinderGeometry(.12,.15,9),0x9bb35a,x+Math.random()*1.4,4.5,z+Math.random()*1.4)}
+[['Trường Sơn Đông: Thơ',D,'#9b1c14'],['Trường Sơn Tây: Truyện',W,'#1f5f3a']].forEach(([t,d,c])=>{const l=tag(t,c,9);l.position.set(d[0]*10,4.5,d[1]*10);sc.add(l)});
+const so=new T.Group(),mk=(g,c,x,y,z)=>mesh(g,c,x,y,z,so);
+mk(new T.BoxGeometry(1,1.3,.6),0x5f7035,0,2.1,0);
+mk(new T.SphereGeometry(.36,12,10),0xe3b58c,0,3.05,0);
+mk(new T.SphereGeometry(.52,14,8,0,6.283,0,1.571),0x7d8f45,0,3.15,0);
+mk(new T.CylinderGeometry(.72,.72,.06,18),0x7d8f45,0,3.15,0);
+mk(new T.CircleGeometry(.13,5),0xffd21f,0,3.42,.5);
+mk(new T.BoxGeometry(.85,.9,.4),0x3f4a22,0,2.2,-.5);
+mk(new T.BoxGeometry(.1,.12,1.8),0x2a2a2a,.45,2.3,.4).rotation.x=.4;
+const limb=(x,y,len,w,c)=>{const p=new T.Group();p.position.set(x,y,0);so.add(p);mesh(new T.BoxGeometry(w,len,w),c,0,-len/2,0,p);return p};
+const LL=limb(-.25,1.45,1.4,.42,0x4f5e2a),RL=limb(.25,1.45,1.4,.42,0x4f5e2a),LA=limb(-.68,2.7,1.2,.3,0x5f7035),RA=limb(.68,2.7,1.2,.3,0x5f7035);
+so.position.set(0,0,10);sc.add(so);
+const keys={},vis=new Set(),cp=new T.Vector3();let tgt=null,near=null,last=0,ph=0,fin=0;
+const busy=()=>!P.hidden||!I.hidden;
+addEventListener('keydown',e=>{const k=e.key.toLowerCase();keys[k]=1;if(k=='e'&&near&&!busy())open(near);if(k.startsWith('arrow')&&!busy())e.preventDefault()});
+addEventListener('keyup',e=>keys[e.key.toLowerCase()]=0);
+document.querySelectorAll('#pad button').forEach(b=>{const k=b.dataset.k;b.onpointerdown=()=>keys[k]=1;['onpointerup','onpointerleave','onpointercancel'].forEach(h=>b[h]=()=>keys[k]=0)});
+$('go').onclick=()=>I.hidden=true;
+$('act').onclick=()=>near&&open(near);
+function ml(){const L=$('list');L.querySelectorAll('button').forEach(b=>b.remove());L.insertAdjacentHTML('beforeend',S.map((s,i)=>`<button data-i="${i}" class="${s.s}">${s.s=='D'?'Thơ':'Truyện'}: ${esc(s.sn)}</button>`).join(''));$('prog').textContent=vis.size+'/'+S.length+' trạm'}ml();
+$('list').onclick=e=>{const b=e.target.closest('button');if(b){tgt=S[b.dataset.i].p.clone();$('list').open=false}};
+function parseRS(t){const it=[],bad=[],cl=x=>x.replace(/^[\s\-–—:]+|[\s\-–—:]+$/g,'');
+(t||'').split('\n').forEach(z=>{z=z.trim();if(!z)return;
+const m=z.match(/(?:https?:\/\/|www\.)[^\s"'<>|]+|\b(?:[a-z0-9-]+\.)+(?:com|vn|be|net|org|edu|gov|tv|io)(?:\/[^\s"'<>|]*)?/i);
+if(!m){bad.push(z);return}
+let u=m[0].replace(/[.,;)]+$/,'');if(!/^https?:\/\//i.test(u))u='https://'+u;
+let w;try{w=new URL(u)}catch(e){bad.push(z);return}
+const ps=[...z.slice(0,m.index).split('|'),...z.slice(m.index+m[0].length).split('|')].map(cl).filter(Boolean),q=w.href.toLowerCase(),hs=w.hostname.replace(/^www\./,'');
+it.push({n:ps[0]||hs,u:w.href,d:ps[1]||'',h:hs,k:/youtube\.com|youtu\.be|vimeo\.com|fb\.watch|facebook\.com\/(watch|reel)|tiktok\.com|\.(mp4|webm|mov)(\?|$)/.test(q)?'Video':/\.(pdf|docx?|pptx?|xlsx?)(\?|$)|docs\.google\.com|drive\.google\.com/.test(q)?'Tài liệu':'Liên kết'})});
+return{it,bad}}
+function rsInfo(){const t=P.querySelector('[data-k="rs"]'),x=$('rsx');if(!t||!x)return;const r=parseRS(t.value);
+x.textContent='Đã nhận '+r.it.length+' liên kết'+(r.bad.length?'. Chưa nhận ra đường dẫn ở '+r.bad.length+' dòng: '+r.bad.map(b=>'“'+b.slice(0,24)+'”').join(', '):'')+'. Bấm Lưu và xem trạm để thấy ở trang chính của trạm; bấm Lưu vào trang để mọi người cùng thấy.'}
+function open(s){vis.add(s);s.beam.material.color.set(0x9be37a);tgt=null;for(const k in keys)keys[k]=0;
+ml();cur=s;
+const d=s.s=='D',c=[hx(s.c1,d?'#7a1410':'#16361f'),hx(s.c2,d?'#d4301f':'#3f7d3a')],gi=s.im||[];
+let L=(s.l||'').split('\n').filter(z=>z.includes('|')).map(z=>{const i=z.indexOf('|');return[z.slice(0,i).trim(),z.slice(i+1).trim()]}).filter(z=>z[0]&&z[1]);if(!L.length)L=[[s.y,'Năm ra đời của tác phẩm.']];
+const tb=[['Hoàn cảnh ra đời',s.c],['Nội dung chính',s.t],['Nghệ thuật đặc sắc',s.g],['Giá trị và ý nghĩa',s.v]];if(s.et&&s.ec)tb.push([s.et,s.ec]);
+const RS=parseRS(s.rs).it;
+const bg=s.bg?`;background:linear-gradient(135deg,${c[0]}d9,${c[1]}8c),url('${s.bg}') center/cover`:'';
+P.innerHTML=`<nav class="nv"><b>${esc(s.sn)}</b><button data-go="g1">Giới thiệu</button><button data-go="g2">Hành trình</button><button data-go="g3">Chuyên mục</button>${gi.length?'<button data-go="g5">Hình ảnh</button>':''}<button data-go="g4">Suy ngẫm</button>${RS.length?'<button data-go="g6">Liên kết</button>':''}<button data-a="edt">Sửa nội dung</button><button class="x">Đóng</button></nav>`
++`<header id="g1" class="hero" style="--c1:${c[0]};--c2:${c[1]}${bg}"><div>${d?'Trường Sơn Đông, thơ':'Trường Sơn Tây, truyện ngắn'}</div><h1>${esc(s.n)}</h1><p>${esc(s.a)} (${esc(s.y)})</p>${s.m?`<blockquote>${esc(s.m)}</blockquote>`:''}<button data-go="g2">Khám phá</button></header>`
++`<section id="g2"><span class="kk">Hành trình</span><h2>Những dấu mốc của tác phẩm</h2><div class="tl">${L.map(([y,t])=>`<div><b>${esc(y)}</b>${esc(t)}</div>`).join('')}</div></section>`
++`<section id="g3"><span class="kk">Chuyên mục</span><h2>Khám phá tác phẩm</h2><div class="tabs">${tb.map((t,i)=>`<button data-tab="${i}" class="${i?'':'on'}">${esc(t[0])}</button>`).join('')}</div>${tb.map((t,i)=>`<div class="tp" ${i?'hidden':''}><p>${esc(t[1])}</p></div>`).join('')}</section>`
++(gi.length?`<section id="g5"><span class="kk">Tư liệu</span><h2>Hình ảnh</h2><div class="gal">${gi.map(u=>`<img src="${u}" alt="Hình minh họa">`).join('')}</div></section>`:'')
++`<section id="g4"><span class="kk">Suy ngẫm</span><h2>Câu hỏi dành cho bạn</h2><div class="q"><p>${esc(s.q)}</p></div></section>`
++(RS.length?`<section id="g6"><span class="kk">Tìm hiểu thêm</span><h2>Liên kết mở rộng</h2><div class="rs">${RS.map(r=>`<a class="rc" href="${esc(r.u)}" target="_blank" rel="noopener noreferrer"><i>${r.k}</i><b>${esc(r.n)}</b>${r.d?`<span>${esc(r.d)}</span>`:''}<small>${esc(r.h)}</small></a>`).join('')}</div></section>`:'');P.hidden=false;P.scrollTop=0}
+P.onclick=e=>{const t=e.target;if(t.tagName=='IMG'&&t.closest('.gal'))return t.classList.toggle('big');
+const b=t.closest('[data-go],[data-tab]');if(b){if(b.dataset.go)P.querySelector('#'+b.dataset.go).scrollIntoView({behavior:'smooth'});else{P.querySelectorAll('[data-tab]').forEach(z=>z.classList.toggle('on',z==b));P.querySelectorAll('.tp').forEach((z,i)=>z.hidden=i!=b.dataset.tab)}return}
+const a=t.dataset.a;if(a=='edt')return edit(S.indexOf(cur));if(a)return act2(a);if(!t.classList.contains('x'))return;P.hidden=true;
+if(vis.size==S.length&&!fin){fin=1;P.innerHTML='<button class="x">Đóng</button><h2>Hoàn thành hành trình!</h2><p>Bạn đã đi qua cả hai sườn Trường Sơn. Hãy cùng nhóm so sánh: hình tượng người lính và người thanh niên trong thơ (sườn Đông) khác với trong truyện ngắn (sườn Tây) ở điểm nào? Điều gì khiến cả hai con đường cùng dẫn về một lí tưởng?</p>';P.hidden=false}};
+function edit(i){ei=i;const s=S[i],d=s.s=='D';
+const F=[['n','Tên tác phẩm',1],['sn','Tên ngắn trên bảng chỉ dẫn trong rừng',1],['a','Tác giả',1],['y','Năm',1],['m','Thông điệp nổi bật ở đầu trang',2],['l','Dấu mốc, mỗi dòng viết: năm | nội dung',4],['c','Hoàn cảnh ra đời',3],['t','Nội dung chính',4],['g','Nghệ thuật đặc sắc',3],['v','Giá trị và ý nghĩa',3],['et','Tên mục thêm (để trống nếu không cần)',1],['ec','Nội dung mục thêm',4],['rs','Liên kết ở cuối trang trạm (video, tài liệu, bài viết…): mỗi dòng một liên kết. Viết Tên | đường dẫn | ghi chú, hoặc chỉ dán đường dẫn',5],['q','Câu hỏi suy ngẫm',3]];
+P.innerHTML=`<button class="x">Đóng</button><h2>Chỉnh sửa nội dung</h2><div class="f"><label>Chọn trạm</label><select id="es">${S.map((x,j)=>`<option value="${j}"${j==i?' selected':''}>${x.s=='D'?'Thơ':'Truyện'}: ${esc(x.sn)}</option>`).join('')}</select>`
++F.map(([k,l,r])=>`<label>${l}</label><textarea data-k="${k}" rows="${r}">${esc(s[k])}</textarea>${k=='rs'?'<p class="hint" id="rsx"></p>':''}`).join('')
++`<label>Màu phần đầu trang (hai màu chuyển sắc)</label><div class="row"><input type="color" data-k="c1" value="${hx(s.c1,d?'#7a1410':'#16361f')}"><input type="color" data-k="c2" value="${hx(s.c2,d?'#d4301f':'#3f7d3a')}"></div>`
++`<label>Ảnh nền phần đầu trang</label><input type="file" accept="image/*" data-up="bg">${s.bg?`<div class="th"><span><img src="${s.bg}"><button class="b" data-a="dbg">Gỡ ảnh</button></span></div>`:''}`
++`<label>Hình ảnh minh họa (chọn được nhiều ảnh, tối đa 8)</label><input type="file" accept="image/*" multiple data-up="im"><div class="th">${s.im.map((u,j)=>`<span><img src="${u}"><button class="b" data-a="di:${j}">Xóa</button></span>`).join('')}</div>`
++`<h3>Cài đặt chung</h3><label>Khung cảnh</label><select data-c="sky">${Object.keys(SKY).map(k=>`<option${k==CFG.sky?' selected':''}>${k}</option>`).join('')}</select><label>Tiêu đề màn hình mở đầu</label><textarea data-c="it" rows="1">${esc(CFG.it)}</textarea><label>Lời giới thiệu mở đầu</label><textarea data-c="ix" rows="4">${esc(CFG.ix)}</textarea></div>`
++`<p><button class="b" data-a="view">Lưu và xem trạm</button><button class="b" data-a="save">Lưu</button><button class="b" data-a="addD">Thêm trạm thơ</button><button class="b" data-a="addT">Thêm trạm truyện</button><button class="b" data-a="del">Xóa trạm này</button></p>`
++`<h3>Xuất trò chơi</h3><p><button class="b" data-a="pub">Lưu vào trang (xuất bản bản mới)</button><button class="b" data-a="dl">Tải trò chơi về máy (.html)</button></p><p><button class="b" data-a="exp">Xuất dữ liệu</button><button class="b" data-a="imp">Nhập dữ liệu</button><button class="b" data-a="rst">Khôi phục bản đã xuất bản</button></p><textarea id="ej" rows="3" placeholder="Dữ liệu xuất ra hiện ở đây. Muốn nhập, dán dữ liệu vào ô này rồi nhấn Nhập dữ liệu."></textarea><p id="em"></p>`;P.scrollTop=0;rsInfo()}
+function rd(){const s=S[ei];P.querySelectorAll('[data-k]').forEach(t=>s[t.dataset.k]=t.value);P.querySelectorAll('[data-c]').forEach(t=>CFG[t.dataset.c]=t.value);
+$('it').textContent=CFG.it;$('ix').textContent=CFG.ix;sky(CFG.sky);try{localStorage.setItem('ts-cfg',JSON.stringify(CFG))}catch(e){}lab(s);ml();sv()}
+function act2(a){const m=$('em'),L=a=='addD'?'D':'T';if(a!='del')dl=0;if(a!='imp'&&a!='rst')rd();
+if(a=='view')open(S[ei]);
+else if(a=='save')m.textContent=ok1?'Đã lưu trong trình duyệt này. Muốn giữ lâu dài hoặc chia sẻ, dùng Lưu vào trang hoặc Tải trò chơi.':'Bộ nhớ trình duyệt đã đầy (ảnh quá nhiều): hãy xóa bớt ảnh rồi dùng ngay Lưu vào trang hoặc Tải trò chơi.';
+else if(a=='dbg'){S[ei].bg='';sv();edit(ei)}
+else if(a.startsWith('di:')){S[ei].im.splice(+a.slice(3),1);sv();edit(ei)}
+else if(a=='addD'||a=='addT'){if(S.filter(x=>x.s==L).length>=4){m.textContent='Mỗi sườn tối đa 4 trạm.';return}const n={s:L,n:'Tên tác phẩm mới',sn:'Trạm mới',a:'Tác giả',y:'Năm',c:'',t:'',g:'',v:'',q:'',m:'',l:'',im:[],bg:'',et:'',ec:'',rs:'',c1:'',c2:''};S.push(n);build(n);fin=0;ml();sv();edit(S.length-1)}
+else if(a=='del'){if(!dl){dl=1;m.textContent='Bấm “Xóa trạm này” thêm một lần nữa để xác nhận.';return}dl=0;if(S.length<2){m.textContent='Cần giữ lại ít nhất một trạm.';return}const s=S[ei];sc.remove(s.gp);vis.delete(s);S.splice(ei,1);sv();ml();edit(Math.max(0,ei-1))}
+else if(a=='pub')pub(m);else if(a=='dl')dwn(m);
+else if(a=='exp'){const j=JSON.stringify(S.map(strip),null,1),e=$('ej');e.value=j;e.select();try{navigator.clipboard.writeText(j);m.textContent='Đã sao chép dữ liệu. Hãy dán vào một tệp để lưu lại.'}catch(x){m.textContent='Hãy sao chép nội dung trong ô bên trên.'}}
+else if(a=='imp'){try{const j=JSON.parse($('ej').value);if(!Array.isArray(j)||!j.length||!j.every(x=>x&&(x.s=='D'||x.s=='T')))throw 0;localStorage.setItem('ts-data',JSON.stringify(j.map(strip)));location.reload()}catch(x){m.textContent='Dữ liệu không hợp lệ.'}}
+else if(a=='rst'){try{localStorage.removeItem('ts-data');localStorage.removeItem('ts-cfg')}catch(x){}location.reload()}}
+P.oninput=e=>{if(e.target.dataset&&e.target.dataset.k=='rs')rsInfo()};
+P.onchange=async e=>{const t=e.target;if(t.id=='es'){rd();return edit(+t.value)}
+if(t.dataset.up&&t.files.length){rd();const s=S[ei],bgm=t.dataset.up=='bg';$('em').textContent='Đang xử lý ảnh...';
+try{for(const f of t.files){if(!bgm&&s.im.length>=8)break;const u=await rz(f,bgm?1280:900);if(bgm)s.bg=u;else s.im.push(u)}}catch(x){$('em').textContent='Không đọc được ảnh.';return}
+sv();edit(ei);if(!ok1)$('em').textContent='Bộ nhớ trình duyệt đã đầy: hãy xóa bớt ảnh, rồi dùng ngay Lưu vào trang hoặc Tải trò chơi.'}};
+function rz(f,mx){return new Promise((res,rej)=>{const r=new FileReader();r.onerror=rej;r.onload=()=>{const i=new Image();i.onerror=rej;i.onload=()=>{const k=Math.min(1,mx/Math.max(i.width,i.height)),c=document.createElement('canvas');c.width=Math.round(i.width*k);c.height=Math.round(i.height*k);c.getContext('2d').drawImage(i,0,0,c.width,c.height);res(c.toDataURL('image/jpeg',.72))};i.src=r.result};r.readAsDataURL(f)})}
+function pack(){const cl=document.documentElement.cloneNode(true),id=['ms','mj','t3','fn'];
+cl.querySelectorAll('head>*').forEach(e=>{if(!(e.tagName=='META'||e.tagName=='TITLE'||id.includes(e.id)))e.remove()});
+cl.querySelectorAll('body>*').forEach(e=>{if(!['hud','list','act','pad','intro','panel','mj','t3'].includes(e.id))e.remove()});
+[cl,cl.querySelector('body')].forEach(e=>[...e.attributes].forEach(a=>a.name!='lang'&&e.removeAttribute(a.name)));
+const q=s=>cl.querySelector(s);q('#panel').innerHTML='';q('#panel').hidden=true;q('#intro').hidden=false;q('#act').hidden=true;q('#list').removeAttribute('open');q('#list').querySelectorAll('button').forEach(b=>b.remove());
+const J=x=>JSON.stringify(x).replace(/</g,'\\u003c'),mj=q('#mj');
+mj.textContent=mj.textContent.replace(/let S=\[[\s\S]*?\n\];\n/,()=>'let S='+J(S.map(strip)).slice(0,-1)+'\n];\n').replace(/let CFG=\{.*?\};(?=try\{Object\.assign)/,()=>'let CFG='+J(CFG)+';');
+return '<!DOCTYPE html>\n'+cl.outerHTML}
+async function pub(m){try{const a=window.claude&&await claude.use('artifact');if(!a){m.textContent='Chỉ dùng được khi mở trò chơi trong Claude. Hãy dùng nút Tải trò chơi về máy.';return}m.textContent='Đang lưu vào trang...';await a.publish(pack());m.textContent='Đã lưu. Trang sẽ tải lại với nội dung mới.'}catch(e){m.textContent=e&&(e.code=='not_writer'||e.code=='not_granted')?'Bạn đang xem ở chế độ chỉ đọc nên không lưu được vào trang. Hãy dùng Tải trò chơi về máy.':'Không lưu được ('+((e&&e.code)||'lỗi')+').'}}
+async function dwn(m){const html=pack(),name='truong-son-hoc-lieu-so.html';try{const d=window.claude&&await claude.use('downloads');if(d)await d.save({filename:name,data:html});else{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([html],{type:'text/html'}));a.download=name;a.click();m.textContent='Đã tạo tệp để tải về.'}}catch(e){m.textContent=e&&e.code=='declined'?'Bạn đã hủy tải.':'Không tải được ('+((e&&e.code)||'lỗi')+').'}}
+$('ed').onclick=()=>{if(!I.hidden)return;for(const k in keys)keys[k]=0;edit(0);P.hidden=false};
+function rs(){ren.setSize(innerWidth,innerHeight);cam.aspect=innerWidth/innerHeight;cam.updateProjectionMatrix()}addEventListener('resize',rs);rs();
+function frame(t){requestAnimationFrame(frame);const dt=Math.min((t-last)/1000,.05);last=t;
+let mx=0,mz=0;
+if(!busy()){mx=(keys.d||keys.arrowright?1:0)-(keys.a||keys.arrowleft?1:0);mz=(keys.s||keys.arrowdown?1:0)-(keys.w||keys.arrowup?1:0);
+if(mx||mz)tgt=null;else if(tgt){const dx=tgt.x-so.position.x,dz=tgt.z-so.position.z,l=Math.hypot(dx,dz);if(l<2.5)tgt=null;else{mx=dx/l;mz=dz/l}}}
+const mv=Math.hypot(mx,mz);
+if(mv){mx/=mv;mz/=mv;so.position.x=Math.max(-75,Math.min(75,so.position.x+mx*9*dt));so.position.z=Math.max(-80,Math.min(20,so.position.z+mz*9*dt));so.rotation.y=Math.atan2(mx,mz);ph+=dt*9}
+const a=mv?Math.sin(ph)*.8:0;LL.rotation.x=a;RL.rotation.x=-a;LA.rotation.x=-a;RA.rotation.x=a;
+near=busy()?null:S.find(s=>s.p.distanceTo(so.position)<6)||null;
+$('act').hidden=!near;if(near)$('act').textContent='Khám phá: '+near.sn;
+S.forEach((s,i)=>{s.beam.material.opacity=.22+.1*Math.sin(t/400+i);s.star.rotation.y=t/700});fb.rotation.y=Math.sin(t/900)*.15;ff.position.y=Math.sin(t/900)*.5;ff.rotation.y=t/30000;
+cam.position.lerp(cp.set(so.position.x,9,so.position.z+14),.08);cam.lookAt(so.position.x,2,so.position.z-2);
+ren.render(sc,cam)}
+requestAnimationFrame(frame);
+</script></body></html>
